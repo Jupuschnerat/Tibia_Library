@@ -1,17 +1,17 @@
 Rails.application.routes.draw do
-  # Devise routes for users
   devise_for :users
-  # root to: "pages#home"
 
-  # Additional routes for resources
-  resources :bosses_nemesis
-  resources :guides do
-    resources :bosses_nemesis
+  resources :bosses_nemises do
+    resources :groups
   end
-  resources :groups
-  resources :users, only: [:index, :show]
 
-  # Custom routes
-  # get 'dashboard', to: 'dashboard#index'
+  resources :guides
 
+  resources :groups do
+    resources :users, only: [:index, :create, :destroy] # Assuming you want CRUD operations for users within groups
+  end
+
+  resources :users, only: [:show, :edit, :update, :destroy] # For individual user management
+
+  root 'bosses_nemesis#index' # Or whatever your root route should be
 end
