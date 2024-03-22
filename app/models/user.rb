@@ -7,5 +7,7 @@ class User < ApplicationRecord
   validates :email, presence: true
   validates :character_name, presence: true
   belongs_to :group, optional: true
-  has_many :owned_groups, class_name: "Group", foreign_key: "owner_id"
+  has_many :owned_groups, class_name: 'Group', foreign_key: 'owner_id'
+  has_many :memberships
+  has_many :groups, through: :memberships
 end

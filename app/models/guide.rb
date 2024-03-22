@@ -1,3 +1,3 @@
 class Guide < ApplicationRecord
-  has_many :bosses_nemesis
+  has_many :bosses
 end

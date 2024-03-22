@@ -10,21 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_21_104505) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_22_125744) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "bosses_nemesis", force: :cascade do |t|
+  create_table "bosses", force: :cascade do |t|
     t.integer "janela"
     t.string "local"
+    t.string "name"
+    t.boolean "checked"
+    t.boolean "found"
     t.bigint "guide_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["guide_id"], name: "index_bosses_nemesis_on_guide_id"
+    t.index ["guide_id"], name: "index_bosses_on_guide_id"
+  end
+
+  create_table "groupbosses", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "groups", force: :cascade do |t|
     t.bigint "owner_id", null: false
+    t.string "name"
+    t.string "server"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["owner_id"], name: "index_groups_on_owner_id"
@@ -35,24 +45,38 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_21_104505) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "memberships", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "group_id"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "owners", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "servers", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.string "character_name", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "character_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "bosses_nemesis", "guides"
+  add_foreign_key "bosses", "guides"
   add_foreign_key "groups", "owners"
 end

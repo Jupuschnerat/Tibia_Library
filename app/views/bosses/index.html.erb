@@ -1,0 +1,17 @@
+<!-- app/views/bosses/index.html.erb -->
+<h1>Bosses Nemesis</h1>
+<% @boss.each do |boss| %>
+  <div>
+    <strong>Name:</strong> <%= boss.name %>
+    <% if boss.checked %>
+      <span>(Checked by: <%= boss.checked_by.username %> at <%= boss.checked_at %>)</span>
+    <% else %>
+      <%= link_to "Check", check_boss_path(boss), method: :put %>
+    <% end %>
+    <% if boss.found %>
+      <span>(Found by: <%= boss.found_by.username %> at <%= boss.found_at %>)</span>
+    <% else %>
+      <%= link_to "Found", found_boss_path(boss), method: :put %>
+    <% end %>
+  </div>
+<% end %>
