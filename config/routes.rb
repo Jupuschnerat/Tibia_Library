@@ -3,8 +3,16 @@ Rails.application.routes.draw do
 
   resources :bosses do
     resources :groups
-    put 'check', on: :member
-    put 'found', on: :member
+    put 'check'
+    put 'found'
+    resources :users, only: [] do
+      put 'check', to: 'bosses#check'
+      put 'found', to: 'bosses#found'
+    end
+  end
+
+  resources :raid_bosses do
+    resources :groups
   end
 
   resources :guides
@@ -24,5 +32,24 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :event_bosses, only: [:index] do
+    resources :groups
+    put 'check'
+    put 'found'
+    resources :users, only: [] do
+      put 'check', to: 'event_bosses#check'
+      put 'found', to: 'event_bosses#found'
+    end
+  end
+
+  resources :quest_bosses, only: [:index] do
+    resources :groups
+    put 'check'
+    put 'found'
+    resources :users, only: [] do
+      put 'check', to: 'quest_bosses#check'
+      put 'found', to: 'quest_bosses#found'
+    end
+  end
 
 end

@@ -6,7 +6,7 @@ class CreateBosses < ActiveRecord::Migration[7.1]
       t.string :name
       t.boolean :checked
       t.boolean :found
-      t.references :guide, null: false, foreign_key: true
+      # t.references :guide, null: false, foreign_key: true
 
       t.timestamps
     end
