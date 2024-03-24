@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :owned_groups, class_name: 'Group', foreign_key: 'owner_id'
   has_many :memberships
   has_many :groups, through: :memberships
+  has_and_belongs_to_many :groups
   # Method to increment checks_count
   def increment_checks_count
     self.increment!(:checks_count)

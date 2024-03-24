@@ -4,8 +4,8 @@ class CreateBosses < ActiveRecord::Migration[7.1]
       t.integer :janela
       t.string :local
       t.string :name
-      t.boolean :checked
-      t.boolean :found
+      t.boolean :checked, default: false
+      t.boolean :found, default: false
       # t.references :guide, null: false, foreign_key: true
 
       t.timestamps

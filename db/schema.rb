@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_23_194546) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_24_112421) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -92,6 +92,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_23_194546) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "no_chance_bosses", force: :cascade do |t|
+    t.bigint "boss_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["boss_id"], name: "index_no_chance_bosses_on_boss_id"
+  end
+
   create_table "owners", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -142,5 +149,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_23_194546) do
   add_foreign_key "bosses", "users", column: "checked_by_id"
   add_foreign_key "bosses", "users", column: "found_by_id"
   add_foreign_key "groups", "users", column: "owner_id"
+  add_foreign_key "no_chance_bosses", "bosses"
   add_foreign_key "servers", "groups"
 end

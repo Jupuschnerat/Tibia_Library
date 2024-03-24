@@ -7,14 +7,16 @@ class BossesController < ApplicationController
   end
 
   def check
-    boss = Boss.find(params[:id])
-    boss.update(checked: true, checked_by: current_user.id, checked_at: Time.now)
+    @boss = Boss.find(params[:id])
+    @boss.update(checked: true, checked_by: current_user.id, checked_at: Time.now)
     redirect_to @boss, notice: 'Boss was marked as checked.'
   end
 
   def found
-    boss = Boss.find(params[:id])
-    boss.update(found: true, found_by: current_user.id, found_at: Time.now)
+    @boss = Boss.find(params[:id])
+    @boss.update(found: true, found_by: current_user.id, found_at: Time.now)
+    NoChanceBoss.create(boss: boss)
     redirect_to @boss, notice: 'Boss was marked as found.'
+    @boss = Boss.find(params[:id])
   end
 end
