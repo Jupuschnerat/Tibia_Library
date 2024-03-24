@@ -153,6 +153,19 @@ bosses_data = [
   { id: 57, name: 'Burster', janela: 'Farmable Spawn', local: 'Kazordoon - The Void', image_path: 'Burster.gif'},
   { id: 58, name: 'Dreadful Disruptor', janela: 'Farmable Spawn', local: 'Edron - The Void', image_path: 'Dreadful_Disruptor.gif'},
   { id: 59, name: 'Mahatheb', janela: 'Farmable Spawn', local: 'Edron Forgotten Tomb', image_path: 'Mahatheb.gif'},
+  { id: 60, name: 'Elvira Hammerthrust', janela: 'Unknown', local: 'Dwarf Mines - Kazordoon', image_path: 'Elvira_Hammerthrust.gif'},
+  { id: 61, name: 'Jesse the Wicked', janela: 'Unknown', local: 'Ancient Temple - Thais', image_path: 'Jesse_the_Wicked.gif'},
+  { id: 62, name: 'Mornenion', janela: 'Unknown', local: 'Shadowthorn - Venore', image_path: 'Mornenion.gif'},
+  { id: 63, name: 'Robby the Reckless', janela: 'Unknown', local: 'Ghostlands - Carlin', image_path: 'Robby_the_Reckless.gif'},
+  { id: 64, name: 'Yakchal', janela: 'Unknown', local: 'Formorgar Mines', image_path: 'Yakchal.gif'},
+  { id: 65, name: 'Groam', janela: 'Unknown', local: 'Kazordoon', image_path: 'Groam.gif'},
+  { id: 66, name: 'Furyosa', janela: 'Unknown', local: 'Fury Gate', image_path: 'Furyosa.gif'},
+  { id: 67, name: 'The Hungerer', janela: 'Unknown', local: 'Hive', image_path: 'The_Hungerer.gif'},
+  { id: 68, name: 'The Mean Masher', janela: 'Unknown', local: 'Hive', image_path: 'The_Mean_Masher.gif'},
+  { id: 69, name: 'The Manhunter', janela: 'Unknown', local: 'Hive', image_path: 'The_Manhunter.gif'},
+  { id: 70, name: 'Arthom The Hunter', janela: 'Random', local: 'Port Hope', image_path: 'Arthom_the_Hunter.gif'},
+  { id: 71, name: 'Oodok Witchmaster', janela: 'Random', local: 'Port Hope', image_path: 'Oodok_Witchmaster.gif'},
+
   # Add more bosses as needed
 ]
 
@@ -232,7 +245,6 @@ event_bosses_data = [
   { id: 8, name: 'The First Dragon', local: 'The First Dragon Event (once a year)', description: 'Treat it as a Quest Boss.', image_path: 'The_First_Dragon.gif' },
   { id: 9, name: 'The Mutated Pumpkin', local: 'Halloween Event (once a year)', description: 'Treat it as a Raid Boss. Its raid happens every 4 hours between Oct 31 and Nov 3.', image_path: 'The_Mutated_Pumpkin.gif' },
   { id: 10, name: 'The Percht Queen', local: 'Winterlight Solstice Event (twice a year)', description: 'Treat her as a Quest Boss. Kill her once every 20 hours', image_path: 'The_Percht_Queen.gif' },
-  { id: 11, name: 'Elvira Hammerthrust, Jesse the Wicked, Mornenion & Robby the Reckless', local: 'Bank Robbery MWC', description: 'This MWC is not announced right after SS (nor on Tibia Observer), as happens randomly during the day. The robbers can be found close to the city they robbed: Kazordoon, Thais, Venore and Carlin', image_paths: ['Elvira_Hammerthrust.gif', 'Jesse_the_Wicked.gif', 'Mornenion.gif', 'Robby_the_Reckless.gif'] },
 ]
 
 # Create event bosses
@@ -262,21 +274,19 @@ QuestBoss.destroy_all
 # Define quest bosses data
 quest_bosses_data = [
   { id: 1, name: 'Horestis', description: "The Mummy's Curse World Change. Only a handful of players can defeat him when it is active, as there are limited canopic jars. You may want to check with city guides early in the day to be among the first players to go there.", image_path: 'Horestis.gif' },
-  { id: 2, name: 'Groam', description: 'Awash World Change. It has a chance to spawn right after SS in the Deepling Scout mines. You can check with any city guide the quest status right before the SS and get ready to kill Groam by logging out near its spawn point.', image_path: 'Groam.gif' },
-  { id: 3, name: 'Raxias', description: 'You should ask Charles for a shortcut every 20h, as Raxias is one of the possible outcomes when his ship wrecks.', image_path: 'Raxias.gif' },
-  { id: 4, name: 'Yakchal', description: 'She will randomly wake up when someone uses a Frozen Starlight on her sarcophagus. There is also a chance that she wakes up more than once in the same day.', image_path: 'Yakchal.gif' },
-  { id: 5, name: 'Ferumbras Mortal Shell', description: "Ferumbras' Ascendant Quest. Kill it every 14 days.", image_path: 'Ferumbras_Mortal_Shell.gif' },
-  { id: 6, name: "Goshnar's Megalomania", description: 'Soul War Quest. Kill it every 3 days.', image_path: "Goshnar's_Megalomania.gif" },
-  { id: 7, name: 'Lizard Gate Guardian', description: 'Children of the Revolution Quest. Kill it every 7 days.', image_path: 'Lizard_Gate_Guardian.gif' },
-  { id: 8, name: 'The Last Lore Keeper', description: 'Forgotten Knowledge Quest. Kill it every 14 days.', image_path: 'The_Last_Lore_Keeper.gif' },
-  { id: 9, name: 'World Devourer', description: 'Heart of Destruction Quest. Kill it every 14 days.', image_path: 'World_Devourer.gif' },
-  { id: 10, name: 'Alptramun', description: 'The Dreamcourts Quest', image_path: 'Alptramun.gif' },
-  { id: 11, name: 'Izcandar Champion of Summer', description: 'The Dreamcourts Quest', image_path: 'Izcandar_Champion_of_Summer.gif' },
-  { id: 12, name: 'Izcandar Champion of Winter', description: 'The Dreamcourts Quest', image_path: 'Izcandar_Champion_of_Winter.gif' },
-  { id: 13, name: 'Izcandar the Banished', description: 'The Dreamcourts Quest', image_path: 'Izcandar_the_Banished.gif' },
-  { id: 14, name: 'Malofur Mangrinder', description: 'The Dreamcourts Quest', image_path: 'Malofur_Mangrinder.gif' },
-  { id: 15, name: 'Maxxenius', description: 'The Dreamcourts Quest', image_path: 'Maxxenius.gif' },
-  { id: 16, name: 'Plagueroot', description: 'The Dreamcourts Quest', image_path: 'Plagueroot.gif' },
+  { id: 2, name: 'Raxias', description: 'You should ask Charles for a shortcut every 20h, as Raxias is one of the possible outcomes when his ship wrecks.', image_path: 'Raxias.gif' },
+  { id: 3, name: 'Ferumbras Mortal Shell', description: "Ferumbras' Ascendant Quest. Kill it every 14 days.", image_path: 'Ferumbras_Mortal_Shell.gif' },
+  { id: 4, name: "Goshnar's Megalomania", description: 'Soul War Quest. Kill it every 3 days.', image_path: "Goshnar's_Megalomania.gif" },
+  { id: 5, name: 'Lizard Gate Guardian', description: 'Children of the Revolution Quest. Kill it every 7 days.', image_path: 'Lizard_Gate_Guardian.gif' },
+  { id: 6, name: 'The Last Lore Keeper', description: 'Forgotten Knowledge Quest. Kill it every 14 days.', image_path: 'The_Last_Lore_Keeper.gif' },
+  { id: 7, name: 'World Devourer', description: 'Heart of Destruction Quest. Kill it every 14 days.', image_path: 'World_Devourer.gif' },
+  { id: 8, name: 'Alptramun', description: 'The Dreamcourts Quest', image_path: 'Alptramun.gif' },
+  { id: 9, name: 'Izcandar Champion of Summer', description: 'The Dreamcourts Quest', image_path: 'Izcandar_Champion_of_Summer.gif' },
+  { id: 10, name: 'Izcandar Champion of Winter', description: 'The Dreamcourts Quest', image_path: 'Izcandar_Champion_of_Winter.gif' },
+  { id: 11, name: 'Izcandar the Banished', description: 'The Dreamcourts Quest', image_path: 'Izcandar_the_Banished.gif' },
+  { id: 12, name: 'Malofur Mangrinder', description: 'The Dreamcourts Quest', image_path: 'Malofur_Mangrinder.gif' },
+  { id: 13, name: 'Maxxenius', description: 'The Dreamcourts Quest', image_path: 'Maxxenius.gif' },
+  { id: 14, name: 'Plagueroot', description: 'The Dreamcourts Quest', image_path: 'Plagueroot.gif' },
   # Add more quest bosses as needed
 ]
 

@@ -6,4 +6,5 @@ class Group < ApplicationRecord
   has_many :group_bosses
   has_many :bosses, through: :group_bosses
   has_many :members, through: :memberships, source: :user
+  has_many :servers
 end
