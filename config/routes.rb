@@ -26,11 +26,12 @@ Rails.application.routes.draw do
 
   root 'bosses#index' # Or whatever your root route should be
 
-  resources :servers do
+  resources :servers, only: [:index, :show] do
     resources :groups do
       resources :membership_requests, only: :create
     end
   end
+
 
   resources :event_bosses, only: [:index] do
     resources :groups

@@ -7,149 +7,261 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-Server.create(id: 1, name: "Ambra")
-Server.create(id: 2, name: "Antica")
-Server.create(id: 3, name: "Astera")
-Server.create(id: 4, name: "Axera")
-Server.create(id: 5, name: "Belobra")
-Server.create(id: 6, name: "Bombra")
-Server.create(id: 7, name: "Bona")
-Server.create(id: 8, name: "Calmera")
-Server.create(id: 9, name: "Castela")
-Server.create(id: 10, name: "Celebra")
-Server.create(id: 11, name: "Celesta")
-Server.create(id: 12, name: "Collabra")
-Server.create(id: 13, name: "Damora")
-Server.create(id: 14, name: "Descubra")
-Server.create(id: 15, name: "Dia")
-Server.create(id: 16, name: "Epoca")
-Server.create(id: 17, name: "Esmera")
-Server.create(id: 18, name: "Etebra")
-Server.create(id: 19, name: "Ferobra")
-Server.create(id: 20, name: "Firmera")
-Server.create(id: 21, name: "Flamera")
-Server.create(id: 22, name: "Gentebra")
-Server.create(id: 23, name: "Gladera")
-Server.create(id: 24, name: "Gravitera")
-Server.create(id: 25, name: "Guerribra")
-Server.create(id: 26, name: "Harmonia")
-Server.create(id: 27, name: "Havera")
-Server.create(id: 28, name: "Honbra")
-Server.create(id: 29, name: "Impulsa")
-Server.create(id: 30, name: "Inabra")
-Server.create(id: 31, name: "Issobra")
-Server.create(id: 32, name: "Jacabra")
-Server.create(id: 33, name: "Jadebra")
-Server.create(id: 34, name: "Jaguna")
-Server.create(id: 35, name: "Kalibra")
-Server.create(id: 36, name: "Kardera")
-Server.create(id: 37, name: "Kendria")
-Server.create(id: 38, name: "Lobera")
-Server.create(id: 39, name: "Luminera")
-Server.create(id: 40, name: "Lutabra")
-Server.create(id: 41, name: "Menera")
-Server.create(id: 42, name: "Monza")
-Server.create(id: 43, name: "Mykera")
-Server.create(id: 44, name: "Nadora")
-Server.create(id: 45, name: "Nefera")
-Server.create(id: 46, name: "Nevia")
-Server.create(id: 47, name: "Obscubra")
-Server.create(id: 48, name: "Ombra")
-Server.create(id: 49, name: "Ousabra")
-Server.create(id: 50, name: "Pacera")
-Server.create(id: 51, name: "Peloria")
-Server.create(id: 52, name: "Premia")
-Server.create(id: 53, name: "Quelibra")
-Server.create(id: 54, name: "Quintera")
-Server.create(id: 55, name: "Rasteibra")
-Server.create(id: 56, name: "Refugia")
-Server.create(id: 57, name: "Retalia")
-Server.create(id: 58, name: "Runera")
-Server.create(id: 59, name: "Secura")
-Server.create(id: 60, name: "Serdebra")
-Server.create(id: 61, name: "Solidera")
-Server.create(id: 62, name: "Syrena")
-Server.create(id: 63, name: "Talera")
-Server.create(id: 64, name: "Thyria")
-Server.create(id: 65, name: "Tornabra")
-Server.create(id: 66, name: "Ulera")
-Server.create(id: 67, name: "Ustebra")
-Server.create(id: 68, name: "Utobra")
-Server.create(id: 69, name: "Venebra")
-Server.create(id: 70, name: "Vitera")
-Server.create(id: 71, name: "Vunira")
-Server.create(id: 72, name: "Wadira")
-Server.create(id: 73, name: "Wildera")
-Server.create(id: 74, name: "Wintera")
-Server.create(id: 75, name: "Yonabra")
-Server.create(id: 76, name: "Yovera")
-Server.create(id: 77, name: "Yubra")
-Server.create(id: 78, name: "Zephyra")
-Server.create(id: 79, name: "Zuna")
-Server.create(id: 80, name: "Zunera")
 
+# Clear existing records to prevent duplicates in development
+# user_id = 1
+
+# owner1 = Owner.create(user_id: user_id)
+
+# Group.destroy_all
+
+# groups_data = [
+#   { id: 1, name: "Group 1", owner_id: owner1.id },
+#   { id: 2, name: "Group 2", owner_id: owner1.id },
+#   { id: 3, name: "Group 3", owner_id: owner1.id },
+#   { id: 4, name: "Group 4", owner_id: owner1.id },
+#   { id: 5, name: "Group 5", owner_id: owner1.id },
+#   { id: 6, name: "Group 6", owner_id: owner1.id },
+#   { id: 7, name: "Group 7", owner_id: owner1.id },
+#   { id: 8, name: "Group 8", owner_id: owner1.id },
+#   { id: 9, name: "Group 9", owner_id: owner1.id },
+#   { id: 10, name: "Group 10", owner_id: owner1.id },
+#   { id: 11, name: "Group 11", owner_id: owner1.id },
+#   { id: 12, name: "Group 12", owner_id: owner1.id },
+#   { id: 13, name: "Group 13", owner_id: owner1.id },
+#   { id: 14, name: "Group 14", owner_id: owner1.id },
+#   { id: 15, name: "Group 15", owner_id: owner1.id },
+#   { id: 16, name: "Group 16", owner_id: owner1.id },
+#   { id: 17, name: "Group 17", owner_id: owner1.id },
+#   { id: 18, name: "Group 18", owner_id: owner1.id },
+#   { id: 19, name: "Group 19", owner_id: owner1.id },
+#   { id: 20, name: "Group 20", owner_id: owner1.id },
+#   { id: 21, name: "Group 21", owner_id: owner1.id },
+#   { id: 22, name: "Group 22", owner_id: owner1.id },
+#   { id: 23, name: "Group 23", owner_id: owner1.id },
+#   { id: 24, name: "Group 24", owner_id: owner1.id },
+#   { id: 25, name: "Group 25", owner_id: owner1.id },
+#   { id: 26, name: "Group 26", owner_id: owner1.id },
+#   { id: 27, name: "Group 27", owner_id: owner1.id },
+#   { id: 28, name: "Group 28", owner_id: owner1.id },
+#   { id: 29, name: "Group 29", owner_id: owner1.id },
+#   { id: 30, name: "Group 30", owner_id: owner1.id },
+#   { id: 31, name: "Group 31", owner_id: owner1.id },
+#   { id: 32, name: "Group 32", owner_id: owner1.id },
+#   { id: 33, name: "Group 33", owner_id: owner1.id },
+#   { id: 34, name: "Group 34", owner_id: owner1.id },
+#   { id: 35, name: "Group 35", owner_id: owner1.id },
+#   { id: 36, name: "Group 36", owner_id: owner1.id },
+#   { id: 37, name: "Group 37", owner_id: owner1.id },
+#   { id: 38, name: "Group 38", owner_id: owner1.id },
+#   { id: 39, name: "Group 39", owner_id: owner1.id },
+#   { id: 40, name: "Group 40", owner_id: owner1.id },
+#   { id: 41, name: "Group 41", owner_id: owner1.id },
+#   { id: 42, name: "Group 42", owner_id: owner1.id },
+#   { id: 43, name: "Group 43", owner_id: owner1.id },
+#   { id: 44, name: "Group 44", owner_id: owner1.id },
+#   { id: 45, name: "Group 45", owner_id: owner1.id },
+#   { id: 46, name: "Group 46", owner_id: owner1.id },
+#   { id: 47, name: "Group 47", owner_id: owner1.id },
+#   { id: 48, name: "Group 48", owner_id: owner1.id },
+#   { id: 49, name: "Group 49", owner_id: owner1.id },
+#   { id: 50, name: "Group 50", owner_id: owner1.id },
+#   { id: 51, name: "Group 51", owner_id: owner1.id },
+#   { id: 52, name: "Group 52", owner_id: owner1.id },
+#   { id: 53, name: "Group 53", owner_id: owner1.id },
+#   { id: 54, name: "Group 54", owner_id: owner1.id },
+#   { id: 55, name: "Group 55", owner_id: owner1.id },
+#   { id: 56, name: "Group 56", owner_id: owner1.id },
+#   { id: 57, name: "Group 57", owner_id: owner1.id },
+#   { id: 58, name: "Group 58", owner_id: owner1.id },
+#   { id: 59, name: "Group 59", owner_id: owner1.id },
+#   { id: 60, name: "Group 60", owner_id: owner1.id },
+#   { id: 61, name: "Group 61", owner_id: owner1.id },
+#   { id: 62, name: "Group 62", owner_id: owner1.id },
+#   { id: 63, name: "Group 63", owner_id: owner1.id },
+#   { id: 64, name: "Group 64", owner_id: owner1.id },
+#   { id: 65, name: "Group 65", owner_id: owner1.id },
+#   { id: 66, name: "Group 66", owner_id: owner1.id },
+#   { id: 67, name: "Group 67", owner_id: owner1.id },
+#   { id: 68, name: "Group 68", owner_id: owner1.id },
+#   { id: 69, name: "Group 69", owner_id: owner1.id },
+#   { id: 70, name: "Group 70", owner_id: owner1.id },
+#   { id: 71, name: "Group 71", owner_id: owner1.id },
+#   { id: 72, name: "Group 72", owner_id: owner1.id },
+#   { id: 73, name: "Group 73", owner_id: owner1.id },
+#   { id: 74, name: "Group 74", owner_id: owner1.id },
+#   { id: 75, name: "Group 75", owner_id: owner1.id },
+#   { id: 76, name: "Group 76", owner_id: owner1.id },
+#   { id: 77, name: "Group 77", owner_id: owner1.id },
+#   { id: 78, name: "Group 78", owner_id: owner1.id },
+#   { id: 79, name: "Group 79", owner_id: owner1.id },
+#   { id: 80, name: "Group 80", owner_id: owner1.id }
+
+#   # Add more groups as needed
+# ]
+
+# # Create groups
+# groups_data.each do |group|
+#   Group.create!(id: group[:id], name: group[:name], owner_id: owner1.id)
+# end
+
+Server.destroy_all
+
+servers_data = [
+  { id: 1, name: "Ambra"},
+  { id: 2, name: "Antica"},
+  { id: 3, name: "Astera"},
+  { id: 4, name: "Axera"},
+  { id: 5, name: "Belobra"},
+  { id: 6, name: "Bombra"},
+  { id: 7, name: "Bona"},
+  { id: 8, name: "Calmera"},
+  { id: 9, name: "Castela"},
+  { id: 10, name: "Celebra" },
+  { id: 11, name: "Celesta" },
+  { id: 12, name: "Collabra" },
+  { id: 13, name: "Damora" },
+  { id: 14, name: "Descubra" },
+  { id: 15, name: "Dia" },
+  { id: 16, name: "Epoca" },
+  { id: 17, name: "Esmera" },
+  { id: 18, name: "Etebra" },
+  { id: 19, name: "Ferobra" },
+  { id: 20, name: "Firmera" },
+  { id: 21, name: "Flamera" },
+  { id: 22, name: "Gentebra" },
+  { id: 23, name: "Gladera" },
+  { id: 24, name: "Gravitera" },
+  { id: 25, name: "Guerribra" },
+  { id: 26, name: "Harmonia" },
+  { id: 27, name: "Havera" },
+  { id: 28, name: "Honbra" },
+  { id: 29, name: "Impulsa" },
+  { id: 30, name: "Inabra" },
+  { id: 31, name: "Issobra" },
+  { id: 32, name: "Jacabra" },
+  { id: 33, name: "Jadebra" },
+  { id: 34, name: "Jaguna" },
+  { id: 35, name: "Kalibra" },
+  { id: 36, name: "Kardera" },
+  { id: 37, name: "Kendria" },
+  { id: 38, name: "Lobera" },
+  { id: 39, name: "Luminera" },
+  { id: 40, name: "Lutabra" },
+  { id: 41, name: "Menera" },
+  { id: 42, name: "Monza" },
+  { id: 43, name: "Mykera" },
+  { id: 44, name: "Nadora" },
+  { id: 45, name: "Nefera" },
+  { id: 46, name: "Nevia" },
+  { id: 47, name: "Obscubra" },
+  { id: 48, name: "Ombra" },
+  { id: 49, name: "Ousabra" },
+  { id: 50, name: "Pacera" },
+  { id: 51, name: "Peloria" },
+  { id: 52, name: "Premia" },
+  { id: 53, name: "Quelibra" },
+  { id: 54, name: "Quintera" },
+  { id: 55, name: "Rasteibra" },
+  { id: 56, name: "Refugia" },
+  { id: 57, name: "Retalia" },
+  { id: 58, name: "Runera" },
+  { id: 59, name: "Secura" },
+  { id: 60, name: "Serdebra" },
+  { id: 61, name: "Solidera" },
+  { id: 62, name: "Syrena" },
+  { id: 63, name: "Talera" },
+  { id: 64, name: "Thyria" },
+  { id: 65, name: "Tornabra" },
+  { id: 66, name: "Ulera" },
+  { id: 67, name: "Ustebra" },
+  { id: 68, name: "Utobra" },
+  { id: 69, name: "Venebra" },
+  { id: 70, name: "Vitera" },
+  { id: 71, name: "Vunira" },
+  { id: 72, name: "Wadira" },
+  { id: 73, name: "Wildera" },
+  { id: 74, name: "Wintera" },
+  { id: 75, name: "Yonabra" },
+  { id: 76, name: "Yovera" },
+  { id: 77, name: "Yubra" },
+  { id: 78, name: "Zephyra" },
+  { id: 79, name: "Zuna" },
+  { id: 80, name: "Zunera" }
+]
+
+# Destroy all existing users
+servers_data.each do |server_data|
+  Server.create!(
+    id: server_data[:id],
+    name: server_data[:name],
+    group_id: nil # No group association initially
+  )
+end
+
+puts "Servers seeded sucessfully."
 
 # Clear existing records to prevent duplicates in development
 Boss.destroy_all
 
 # Define your bosses data
 bosses_data = [
-  { id: 1, name: 'Arachir The Ancient One', janela: '6 to 9 days', local: 'Drefia', image_path: 'Arachir_the_Ancient_One.gif' },
-  { id: 2, name: 'Barbaria', janela: '8 to 13 days', local: 'Barbarian Camp', image_path: 'Barbaria.gif' },
-  { id: 3, name: 'Battlemaster Zunzu', janela: '3 to 9 days', local: 'Muggy Plains (Zao)', image_path: 'Battlemaster_Zunzu.gif' },
-  { id: 4, name: 'Big Boss Trolliver', janela: '3 to 8 days', local: 'Edron', image_path: 'Big_Boss_Trolliver.gif' },
-  { id: 5, name: 'Captain Jones', janela: '6 to 10 days', local: 'Ghost Ship', image_path: 'Captain_Jones.gif' },
-  { id: 6, name: 'Countess Sorrow', janela: '14 to 21 days', local: 'PoI Bazir', image_path: 'Countess_Sorrow.gif' },
-  { id: 7, name: 'Cublarc The Plunderer', janela: '6 to 9 days', local: 'Zao Steppe', image_path: 'Cublarc_the_Plunderer.gif' },
-  { id: 8, name: 'Dharalion', janela: '6 to 8 days', local: 'Venore', image_path: 'Dharalion.gif' },
-  { id: 9, name: 'Diblis The Fair', janela: '10 to 16 days', local: 'Edron', image_path: 'Arachir_the_Ancient_One.gif' },
-  { id: 10, name: 'Dracola', janela: '14 to 21 days', local: 'PoI Ashfalor', image_path: 'Dracola.gif' },
-  { id: 11, name: 'Dreadmaw', janela: '1 to 17 days', local: 'Muggy Plains (Zao)', image_path: 'Dreadmaw.gif' },
-  { id: 12, name: 'Flamecaller Zazrak', janela: '5 to 17 days', local: 'Muggy Plains (Zao)', image_path: 'Flamecaller_Zazrak.gif' },
-  { id: 13, name: 'Fleabringer', janela: '5 to 31 days', local: 'Muggy Plains (Zao)', image_path: 'Fleabringer.gif' },
-  { id: 14, name: 'Foreman Kneebiter', janela: '3 to 8 days', local: 'Kazordoon', image_path: 'Foreman_Kneebiter.gif' },
-  { id: 15, name: 'General Murius', janela: '6 to 9 days', local: 'Mintwallin', image_path: 'General_Murius.gif' },
-  { id: 16, name: 'Grandfather Tridian', janela: '6 to 9 days', local: 'Liberty Bay', image_path: 'Grandfather_Tridian.gif' },
-  { id: 17, name: 'Gravelord Oshuran', janela: '7 to 12 days', local: 'Drefia', image_path: 'Gravelord_Oshuran.gif' },
-  { id: 18, name: 'Grorlam', janela: '3 to 8 days', local: 'Thais', image_path: 'Grorlam.gif' },
-  { id: 19, name: 'Hairman The Huge', janela: '5 to 10 days', local: 'Banuta', image_path: 'Hairman_The_Huge.gif' },
-  { id: 20, name: 'Hatebreeder', janela: '6 to 9 days', local: 'Razachai (Zao)', image_path: 'Hatebreeder.gif' },
-  { id: 21, name: 'High Templar Cobrass', janela: '6 to 9 days', local: 'Chor', image_path: 'High_Templar_Cobrass.gif' },
-  { id: 22, name: 'Hirintror', janela: '10 to 30 days', local: 'Formorgar, Nibelor', image_path: 'Hirintror.gif' },
-  { id: 23, name: 'Hirintror', janela: '10 to 30 days', local: ' Nibelor', image_path: 'Hirintror.gif' },
-  { id: 24, name: 'Man in the Cave', janela: '12 to 16 days', local: 'Svargrond', image_path: 'Man_In_The_Cave.gif' },
-  { id: 25, name: 'Massacre', janela: '14 to 21 days', local: 'PoI Apocalypse', image_path: 'Massacre.gif' },
-  { id: 26, name: 'Mr. Punish', janela: '14 to 21 days', local: 'PoI Tafariel', image_path: 'Mr._Punish.gif' },
-  { id: 27, name: 'Ocyakao', janela: '16 to 26 days', local: 'Svargrond', image_path: 'Ocyakao.gif' },
-  { id: 28, name: 'Omrafir', janela: '14 to 28 days', local: 'Roshamuul Prision', image_path: 'Omrafir.gif' },
-  { id: 29, name: 'Rotworm Queen', janela: '12 to 16 days', local: 'Darashia', image_path: 'Rotworm_Queen.gif' },
-  { id: 30, name: 'Rotworm Queen', janela: '12 to 16 days', local: 'Edron', image_path: 'Rotworm_Queen.gif' },
-  { id: 31, name: 'Rotworm Queen', janela: '12 to 16 days', local: 'Hellgate', image_path: 'Rotworm_Queen.gif' },
-  { id: 32, name: 'Rotworm Queen', janela: '12 to 16 days', local: 'Liberty Bay', image_path: 'Rotworm_Queen.gif' },
-  { id: 33, name: 'Rukor Zad', janela: '6 to 9 days', local: 'Dark Cathedral', image_path: 'Rotworm_Queen.gif' },
-  { id: 34, name: 'Shlorg', janela: '13 to 29 days', local: 'Edron', image_path: 'Shlorg.gif' },
-  { id: 35, name: 'Sir Valorcrest', janela: '5 to 9 days', local: 'Edron', image_path: 'Arachir_the_Ancient_One.gif' },
-  { id: 36, name: 'Smuggler Baron Silvertoe', janela: '8 to 16 days', local: 'Port Hope', image_path: 'Smuggler_Baron_Silvertoe.gif' },
-  { id: 37, name: 'The Big Bad One', janela: '6 to 11 days', local: 'Edron', image_path: 'The_Big_Bad_One.gif' },
-  { id: 38, name: 'The Evil Eye', janela: '6 to 12 days', local: 'Hellgate', image_path: 'The_Evil_Eye.gif' },
-  { id: 39, name: 'The Frog Prince', janela: '12 to 19 days', local: 'Thais', image_path: 'The_Frog_Prince.gif' },
-  { id: 40, name: 'The Handmaiden', janela: '14 to 21 days', local: 'PoI Pumin', image_path: 'The_Handmaiden.gif' },
-  { id: 41, name: 'The Imperor', janela: '14 to 21 days', local: 'PoI Infernatil', image_path: 'The_Imperor.gif' },
-  { id: 42, name: 'The Old Whopper', janela: '5 to 11 days', local: 'Edron', image_path: 'The_Old_Whopper.gif' },
-  { id: 43, name: 'The Plasmother', janela: '14 to 21 days', local: 'PoI Verminor', image_path: 'The_Plasmother.gif' },
-  { id: 44, name: 'The Voice of Ruin', janela: '6 to 17 days', local: 'Zao', image_path: 'The_Voice_of_Ruin.gif' },
-  { id: 45, name: 'The Welter', janela: '16 to 29 days', local: 'Port Hope', image_path: 'The_Welter.gif' },
-  { id: 46, name: 'Tyrn', janela: '12 to 25 days', local: 'Drefia', image_path: 'Tyrn.gif' },
-  { id: 47, name: 'Tyrn', janela: '12 to 25 days', local: 'Liberty Bay', image_path: 'Tyrn.gif' },
-  { id: 48, name: 'Tzumrah The Dazzler', janela: '20 to 28 days', local: '', image_path: 'Grandfather_Tridian.gif' },
-  { id: 49, name: 'Warlord Ruzad', janela: '6 to 9 days', local: 'Orc Fortress', image_path: 'Warlord_Ruzad.gif' },
-  { id: 50, name: 'White Pale', janela: '17 to 37 days', local: 'Darashia', image_path: 'White_Pale.gif' },
-  { id: 51, name: 'White Pale', janela: '17 to 37 days', local: 'Edron', image_path: 'White_Pale.gif' },
-  { id: 52, name: 'White Pale', janela: '17 to 37 days', local: 'Liberty Bay', image_path: 'White_Pale.gif' },
-  { id: 53, name: 'Xenia', janela: '7 to 14 days', local: 'Venore', image_path: 'Xenia.gif' },
-  { id: 54, name: 'Yaga The Crone', janela: '5 to 7 days', local: 'Venore', image_path: 'Yaga_the_Crone.gif' },
-  { id: 55, name: 'Zevelon Duskbringer', janela: '6 to 10 days', local: 'Hellgate', image_path: 'Arachir_the_Ancient_One.gif' },
-  { id: 56, name: 'Zushuka', janela: '19 to 29 days', local: 'Svargrond', image_path: 'Zushuka.gif' },
+  { id: 1, name: 'Arachir The Ancient One', janela: '6 to 9', local: 'Drefia', image_path: 'Arachir_the_Ancient_One.gif' },
+  { id: 2, name: 'Barbaria', janela: '8 to 13', local: 'Barbarian Camp', image_path: 'Barbaria.gif' },
+  { id: 3, name: 'Battlemaster Zunzu', janela: '3 to 9', local: 'Muggy Plains (Zao)', image_path: 'Battlemaster_Zunzu.gif' },
+  { id: 4, name: 'Big Boss Trolliver', janela: '3 to 8', local: 'Edron', image_path: 'Big_Boss_Trolliver.gif' },
+  { id: 5, name: 'Captain Jones', janela: '6 to 10', local: 'Ghost Ship', image_path: 'Captain_Jones.gif' },
+  { id: 6, name: 'Countess Sorrow', janela: '14 to 21', local: 'PoI Bazir', image_path: 'Countess_Sorrow.gif' },
+  { id: 7, name: 'Cublarc The Plunderer', janela: '6 to 9', local: 'Zao Steppe', image_path: 'Cublarc_the_Plunderer.gif' },
+  { id: 8, name: 'Dharalion', janela: '6 to 8', local: 'Venore', image_path: 'Dharalion.gif' },
+  { id: 9, name: 'Diblis The Fair', janela: '10 to 16', local: 'Edron', image_path: 'Arachir_the_Ancient_One.gif' },
+  { id: 10, name: 'Dracola', janela: '14 to 21', local: 'PoI Ashfalor', image_path: 'Dracola.gif' },
+  { id: 11, name: 'Dreadmaw', janela: '1 to 17', local: 'Muggy Plains (Zao)', image_path: 'Dreadmaw.gif' },
+  { id: 12, name: 'Flamecaller Zazrak', janela: '5 to 17', local: 'Muggy Plains (Zao)', image_path: 'Flamecaller_Zazrak.gif' },
+  { id: 13, name: 'Fleabringer', janela: '5 to 31', local: 'Muggy Plains (Zao)', image_path: 'Fleabringer.gif' },
+  { id: 14, name: 'Foreman Kneebiter', janela: '3 to 8', local: 'Kazordoon', image_path: 'Foreman_Kneebiter.gif' },
+  { id: 15, name: 'General Murius', janela: '6 to 9', local: 'Mintwallin', image_path: 'General_Murius.gif' },
+  { id: 16, name: 'Grandfather Tridian', janela: '6 to 9', local: 'Liberty Bay', image_path: 'Grandfather_Tridian.gif' },
+  { id: 17, name: 'Gravelord Oshuran', janela: '7 to 12', local: 'Drefia', image_path: 'Gravelord_Oshuran.gif' },
+  { id: 18, name: 'Grorlam', janela: '3 to 8', local: 'Thais', image_path: 'Grorlam.gif' },
+  { id: 19, name: 'Hairman The Huge', janela: '5 to 10', local: 'Banuta', image_path: 'Hairman_The_Huge.gif' },
+  { id: 20, name: 'Hatebreeder', janela: '6 to 9', local: 'Razachai (Zao)', image_path: 'Hatebreeder.gif' },
+  { id: 21, name: 'High Templar Cobrass', janela: '6 to 9', local: 'Chor', image_path: 'High_Templar_Cobrass.gif' },
+  { id: 22, name: 'Hirintror', janela: '10 to 30', local: 'Formorgar, Nibelor', image_path: 'Hirintror.gif' },
+  { id: 23, name: 'Hirintror', janela: '10 to 30', local: ' Nibelor', image_path: 'Hirintror.gif' },
+  { id: 24, name: 'Man in the Cave', janela: '12 to 16', local: 'Svargrond', image_path: 'Man_In_The_Cave.gif' },
+  { id: 25, name: 'Massacre', janela: '14 to 21', local: 'PoI Apocalypse', image_path: 'Massacre.gif' },
+  { id: 26, name: 'Mr. Punish', janela: '14 to 21', local: 'PoI Tafariel', image_path: 'Mr._Punish.gif' },
+  { id: 27, name: 'Ocyakao', janela: '16 to 26', local: 'Svargrond', image_path: 'Ocyakao.gif' },
+  { id: 28, name: 'Omrafir', janela: '14 to 28', local: 'Roshamuul Prision', image_path: 'Omrafir.gif' },
+  { id: 29, name: 'Rotworm Queen', janela: '12 to 16', local: 'Darashia', image_path: 'Rotworm_Queen.gif' },
+  { id: 30, name: 'Rotworm Queen', janela: '12 to 16', local: 'Edron', image_path: 'Rotworm_Queen.gif' },
+  { id: 31, name: 'Rotworm Queen', janela: '12 to 16', local: 'Hellgate', image_path: 'Rotworm_Queen.gif' },
+  { id: 32, name: 'Rotworm Queen', janela: '12 to 16', local: 'Liberty Bay', image_path: 'Rotworm_Queen.gif' },
+  { id: 33, name: 'Rukor Zad', janela: '6 to 9', local: 'Dark Cathedral', image_path: 'Rotworm_Queen.gif' },
+  { id: 34, name: 'Shlorg', janela: '13 to 29', local: 'Edron', image_path: 'Shlorg.gif' },
+  { id: 35, name: 'Sir Valorcrest', janela: '5 to 9', local: 'Edron', image_path: 'Arachir_the_Ancient_One.gif' },
+  { id: 36, name: 'Smuggler Baron Silvertoe', janela: '8 to 16', local: 'Port Hope', image_path: 'Smuggler_Baron_Silvertoe.gif' },
+  { id: 37, name: 'The Big Bad One', janela: '6 to 11', local: 'Edron', image_path: 'The_Big_Bad_One.gif' },
+  { id: 38, name: 'The Evil Eye', janela: '6 to 12', local: 'Hellgate', image_path: 'The_Evil_Eye.gif' },
+  { id: 39, name: 'The Frog Prince', janela: '12 to 19', local: 'Thais', image_path: 'The_Frog_Prince.gif' },
+  { id: 40, name: 'The Handmaiden', janela: '14 to 21', local: 'PoI Pumin', image_path: 'The_Handmaiden.gif' },
+  { id: 41, name: 'The Imperor', janela: '14 to 21', local: 'PoI Infernatil', image_path: 'The_Imperor.gif' },
+  { id: 42, name: 'The Old Whopper', janela: '5 to 11', local: 'Edron', image_path: 'The_Old_Whopper.gif' },
+  { id: 43, name: 'The Plasmother', janela: '14 to 21', local: 'PoI Verminor', image_path: 'The_Plasmother.gif' },
+  { id: 44, name: 'The Voice of Ruin', janela: '6 to 17', local: 'Zao', image_path: 'The_Voice_of_Ruin.gif' },
+  { id: 45, name: 'The Welter', janela: '16 to 29', local: 'Port Hope', image_path: 'The_Welter.gif' },
+  { id: 46, name: 'Tyrn', janela: '12 to 25', local: 'Drefia', image_path: 'Tyrn.gif' },
+  { id: 47, name: 'Tyrn', janela: '12 to 25', local: 'Liberty Bay', image_path: 'Tyrn.gif' },
+  { id: 48, name: 'Tzumrah The Dazzler', janela: '20 to 28', local: '', image_path: 'Grandfather_Tridian.gif' },
+  { id: 49, name: 'Warlord Ruzad', janela: '6 to 9', local: 'Orc Fortress', image_path: 'Warlord_Ruzad.gif' },
+  { id: 50, name: 'White Pale', janela: '17 to 37', local: 'Darashia', image_path: 'White_Pale.gif' },
+  { id: 51, name: 'White Pale', janela: '17 to 37', local: 'Edron', image_path: 'White_Pale.gif' },
+  { id: 52, name: 'White Pale', janela: '17 to 37', local: 'Liberty Bay', image_path: 'White_Pale.gif' },
+  { id: 53, name: 'Xenia', janela: '7 to 14', local: 'Venore', image_path: 'Xenia.gif' },
+  { id: 54, name: 'Yaga The Crone', janela: '5 to 7', local: 'Venore', image_path: 'Yaga_the_Crone.gif' },
+  { id: 55, name: 'Zevelon Duskbringer', janela: '6 to 10', local: 'Hellgate', image_path: 'Arachir_the_Ancient_One.gif' },
+  { id: 56, name: 'Zushuka', janela: '19 to 29', local: 'Svargrond', image_path: 'Zushuka.gif' },
   { id: 57, name: 'Burster', janela: 'Farmable Spawn', local: 'Kazordoon - The Void', image_path: 'Burster.gif'},
   { id: 58, name: 'Dreadful Disruptor', janela: 'Farmable Spawn', local: 'Edron - The Void', image_path: 'Dreadful_Disruptor.gif'},
   { id: 59, name: 'Mahatheb', janela: 'Farmable Spawn', local: 'Edron Forgotten Tomb', image_path: 'Mahatheb.gif'},
@@ -169,17 +281,32 @@ bosses_data = [
   # Add more bosses as needed
 ]
 
-# Create bosses
 bosses_data.each do |boss_data|
-  boss = Boss.create!(
+  janela = boss_data[:janela]
+
+  # Skip processing if janela is not in the expected format
+  next unless janela =~ /\d+ to \d+/
+
+  start_window_offset, end_window_offset = janela.scan(/\d+/).map(&:to_i)
+
+  found_at = Time.now
+  start_window = found_at + start_window_offset.days
+  end_window = found_at + end_window_offset.days
+
+  boss = Boss.new(
     id: boss_data[:id],
     name: boss_data[:name],
-    janela: boss_data[:janela],
     local: boss_data[:local],
+    start_window: start_window,
+    end_window: end_window
   )
 
-  # Attach image using Active Storage
-  boss.image.attach(io: File.open(Rails.root.join('app', 'assets', 'images', boss_data[:image_path])), filename: boss_data[:image_path])
+  # Attach image to boss if image_path is present
+  if boss_data[:image_path].present?
+    boss.image.attach(io: File.open(Rails.root.join('app', 'assets', 'images', boss_data[:image_path])), filename: boss_data[:image_path])
+  end
+
+  boss.save
 end
 
 puts 'Bosses seeded successfully.'

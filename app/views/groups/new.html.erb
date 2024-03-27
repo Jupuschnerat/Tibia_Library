@@ -20,12 +20,7 @@
     <%= form.text_field :name %>
   </div>
 
-  <div class="field">
-    <%= form.label :server_id, "Server" %>
-    <%= form.collection_select :server_id, Server.all, :id, :name, prompt: "Select a server" %>
-  </div>
-  a
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Create Group" %>
   </div>
 <% end %>

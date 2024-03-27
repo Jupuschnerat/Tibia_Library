@@ -1,4 +1,5 @@
 class Server < ApplicationRecord
   validates :name, uniqueness: true
-  belongs_to :group
+  has_many :server_groups
+  has_many :groups, through: :server_groups
 end

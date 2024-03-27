@@ -1,22 +1,19 @@
+# app/controllers/groups_controller.rb
+
 class GroupsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_server, only: :index
-
-  def index
-    @groups = @server.groups
-  end
+  before_action :set_server
+  before_action :set_group, only: [:show, :edit, :update, :destroy]
 
   def new
-    @server = Server.find(params[:server_id]) # Fetch the server based on the provided server_id
-    @group = @server.groups.new # Create a new group associated with the server
+    @group = @server.groups.build
   end
 
   def create
-    @group = @server.groups.new(group_params)
-    @group.owner = current_user # Assuming you have a current_user method
+    @group = @server.groups.build(group_params)
 
     if @group.save
-      redirect_to server_groups_path(@server), notice: 'Group was successfully created.'
+      redirect_to @group, notice: 'Group was successfully created.'
     else
       render :new
     end
@@ -28,7 +25,11 @@ class GroupsController < ApplicationController
     @server = Server.find(params[:server_id])
   end
 
+  def set_group
+    @group = Group.find(params[:id])
+  end
+
   def group_params
-    params.require(:group).permit(:name, :description)
+    params.require(:group).permit(:name)
   end
 end
