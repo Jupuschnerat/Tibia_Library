@@ -1,9 +1,8 @@
 # app/controllers/groups_controller.rb
-
 class GroupsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_server
-  before_action :set_group, only: [:show, :edit, :update, :destroy]
+  before_action :set_group, only: [:new, :create]
 
   def new
     @group = @server.groups.build

@@ -1,19 +1,18 @@
 class BossesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_boss, only: [:show, :edit, :update, :destroy, :check, :found]
+  before_action :set_boss, only: [:check, :found]
 
   def index
-    @boss = Boss.all
+    @server = Server.find(params[:server_id])
+    @bosses = Boss.all
   end
 
   def check
-    @boss = Boss.find(params[:id])
     @boss.update(checked: true, checked_by: current_user.id, checked_at: Time.now)
     redirect_to @boss, notice: 'Boss was marked as checked.'
   end
 
   def found
-    @boss = Boss.find(params[:id])
     if @boss.update(found: true, found_by_id: current_user.id, found_at: Time.now)
       # Calculate the date when the boss can be moved back to the regular boss table
       move_back_date = @boss.start_window + start_window_offset.days
@@ -25,5 +24,13 @@ class BossesController < ApplicationController
     else
       redirect_to @boss, alert: 'Failed to mark the boss as found.'
     end
+  end
+
+  private
+
+  def set_boss
+    @boss = Boss.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    redirect_to bosses_path, alert: "Boss not found."
   end
 end
