@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_27_180142) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_07_141405) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -56,6 +56,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_27_180142) do
     t.datetime "end_window"
     t.string "image_path"
     t.boolean "no_chance", default: false
+    t.string "window"
     t.index ["checked_by_id"], name: "index_bosses_on_checked_by_id"
     t.index ["found_by_id"], name: "index_bosses_on_found_by_id"
   end

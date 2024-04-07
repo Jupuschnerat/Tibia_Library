@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
 
+  root to: 'pages#home'
+
   resources :bosses do
     resources :groups
     put 'check'
@@ -24,7 +26,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :edit, :update, :destroy] # For individual user management
 
-  root 'bosses#index' # Or whatever your root route should be
+
 
   resources :servers, only: [:index, :show] do
     resources :groups do

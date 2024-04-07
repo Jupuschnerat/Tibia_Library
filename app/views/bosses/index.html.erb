@@ -1,18 +1,25 @@
-<!-- app/views/bosses/index.html.erb -->
-<!-- app/views/bosses/index.html.erb -->
+<body class="background-eighty-opacity">
+    <div class="header col-sm">
+      <h1>BOSSES NEMESIS</h1>
+    </div>
 
-<h1>Bosses Nemesis</h1>
-
-<table>
-  <tbody>
-    <% @bosses.each do |boss| %>
-      <tr>
-        <td><%= boss.name %></td>
-        <td>
-          <%= boss_check_link(boss) %>
-          <%= boss_found_link(boss) %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <div class="container">
+      <div class="row">
+        <% @bosses.sort_by(&:name).each do |boss| %>
+          <div class="col-sm-4 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <% if boss.image.attached? %>
+                  <%= image_tag boss.image, class: "boss-image" %>
+                <% end %>
+                <h5 class="card-title"><%= boss.name %></h5>
+                <p class="card-text">Window: <%= boss.window %></p>
+                <p class="card-text">Spawn: <%= boss.local %></p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</body>

@@ -1,12 +1,59 @@
-.navbar-lewagon {
+.navbar-library {
   justify-content: space-between;
+  align-items: center;
   background: white;
 }
 
-.navbar-lewagon .navbar-collapse {
+.nav-item {
+  margin-right: 30px;
+  margin-left: 30px;
+  font-family: Yomogi, sans-serif;
+  font-size: 35px;
+}
+
+.nav-item-divider {
+  padding-top: 10px;
+  border-right: 2px solid #480D3F;
+  height: 60px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.navbar-library .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
+.navbar-library .navbar-brand img {
+  width: 140px;
+}
+
+.navbar-library a {
+  text-decoration: none !important;
+}
+
+.avatar {
   width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.signout {
+  margin-right: 10px; /* Adjust as needed */
+  font-family: Yomogi, sans-serif;
+  font-size: 35px;
+  color: #480D3F; /* Set the color to black */
+}
+
+.signout:hover {
+  color: #480D3F; /* Set the hover color to black */
+}
+.my-profile {
+  background-color: #480D3F; /* Set the background color */
+  display: inline-block; /* Ensure it takes the correct dimensions */
+  padding: 9px 13px; /* Add padding as needed */
+  border-radius: 0px; /* Add border radius for the square appearance */
+}
+
+.my-profile a {
+  color: #B9A7C8; /* Set the text color */
 }

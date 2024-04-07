@@ -1,0 +1,20 @@
+.background-full {
+  background-image: url(Background.jpg); /* path to your background image */
+  background-size: 100%; /* Adjust as needed */
+  background-repeat: no-repeat; /* Adjust as needed */
+};
+
+/* For reduced opacity */
+.background-reduced-opacity {
+  background-image: url(Background.jpg);/* path to your background image */
+  background-size: 100%; /* Adjust as needed */
+  background-repeat: no-repeat; /* Adjust as needed */
+  opacity: 0.7; /* Adjust the opacity level as needed */
+}
+/* For 80% opacity */
+.background-eighty-opacity {
+  background-image: url(Background.jpg); /* path to your background image */
+  background-size: 100%; /* Adjust as needed */
+  background-repeat: no-repeat; /* Adjust as needed */
+  background-color: rgba(255, 255, 255, 0.8); /* Adjust the opacity (0.8 represents 80%) */
+}

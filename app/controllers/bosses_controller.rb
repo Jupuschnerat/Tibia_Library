@@ -3,8 +3,10 @@ class BossesController < ApplicationController
   before_action :set_boss, only: [:check, :found]
 
   def index
-    @server = Server.find(params[:server_id])
+    # @server = Server.find(params[:server_id])
     @bosses = Boss.all
+    @id = Boss.first&.id
+    @server_id = Server.first&.id
   end
 
   def check

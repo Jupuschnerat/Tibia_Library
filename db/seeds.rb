@@ -204,6 +204,19 @@ puts "Servers seeded sucessfully."
 # Clear existing records to prevent duplicates in development
 Boss.destroy_all
 
+  def format_window(janela)
+    case janela
+    when /\d+ to \d+/
+      "#{janela} days"  # If format matches, return as it is
+    when "unknown"
+      "Unknown"  # If 'unknown', return as 'Unknown'
+    when "random"
+      "Random"   # If 'random', return as 'Random'
+    else
+      "Unknown"  # Default case, treat it as 'Unknown'
+    end
+  end
+
 # Define your bosses data
 bosses_data = [
   { id: 1, name: 'Arachir The Ancient One', janela: '6 to 9', local: 'Drefia', image_path: 'Arachir_the_Ancient_One.gif' },
@@ -227,8 +240,8 @@ bosses_data = [
   { id: 19, name: 'Hairman The Huge', janela: '5 to 10', local: 'Banuta', image_path: 'Hairman_The_Huge.gif' },
   { id: 20, name: 'Hatebreeder', janela: '6 to 9', local: 'Razachai (Zao)', image_path: 'Hatebreeder.gif' },
   { id: 21, name: 'High Templar Cobrass', janela: '6 to 9', local: 'Chor', image_path: 'High_Templar_Cobrass.gif' },
-  { id: 22, name: 'Hirintror', janela: '10 to 30', local: 'Formorgar, Nibelor', image_path: 'Hirintror.gif' },
-  { id: 23, name: 'Hirintror', janela: '10 to 30', local: ' Nibelor', image_path: 'Hirintror.gif' },
+  { id: 22, name: 'Hirintror', janela: '10 to 30', local: 'Formorgar', image_path: 'Hirintror.gif' },
+  { id: 23, name: 'Hirintror', janela: '10 to 30', local: 'Nibelor', image_path: 'Hirintror.gif' },
   { id: 24, name: 'Man in the Cave', janela: '12 to 16', local: 'Svargrond', image_path: 'Man_In_The_Cave.gif' },
   { id: 25, name: 'Massacre', janela: '14 to 21', local: 'PoI Apocalypse', image_path: 'Massacre.gif' },
   { id: 26, name: 'Mr. Punish', janela: '14 to 21', local: 'PoI Tafariel', image_path: 'Mr._Punish.gif' },
@@ -238,7 +251,7 @@ bosses_data = [
   { id: 30, name: 'Rotworm Queen', janela: '12 to 16', local: 'Edron', image_path: 'Rotworm_Queen.gif' },
   { id: 31, name: 'Rotworm Queen', janela: '12 to 16', local: 'Hellgate', image_path: 'Rotworm_Queen.gif' },
   { id: 32, name: 'Rotworm Queen', janela: '12 to 16', local: 'Liberty Bay', image_path: 'Rotworm_Queen.gif' },
-  { id: 33, name: 'Rukor Zad', janela: '6 to 9', local: 'Dark Cathedral', image_path: 'Rotworm_Queen.gif' },
+  { id: 33, name: 'Rukor Zad', janela: '6 to 9', local: 'Dark Cathedral', image_path: 'Rukor_Zad.gif' },
   { id: 34, name: 'Shlorg', janela: '13 to 29', local: 'Edron', image_path: 'Shlorg.gif' },
   { id: 35, name: 'Sir Valorcrest', janela: '5 to 9', local: 'Edron', image_path: 'Arachir_the_Ancient_One.gif' },
   { id: 36, name: 'Smuggler Baron Silvertoe', janela: '8 to 16', local: 'Port Hope', image_path: 'Smuggler_Baron_Silvertoe.gif' },
@@ -280,25 +293,31 @@ bosses_data = [
 
   # Add more bosses as needed
 ]
-
 bosses_data.each do |boss_data|
   janela = boss_data[:janela]
 
-  # Skip processing if janela is not in the expected format
-  next unless janela =~ /\d+ to \d+/
+  # Format the window attribute
+  window = format_window(janela)
 
-  start_window_offset, end_window_offset = janela.scan(/\d+/).map(&:to_i)
+  # Calculate start_window and end_window if janela is in the expected format
+  if janela =~ /\d+ to \d+/
+    start_window_offset, end_window_offset = janela.scan(/\d+/).map(&:to_i)
+    found_at = Time.now
+    start_window = found_at + start_window_offset.days
+    end_window = found_at + end_window_offset.days
+  else
+    start_window = nil
+    end_window = nil
+  end
 
-  found_at = Time.now
-  start_window = found_at + start_window_offset.days
-  end_window = found_at + end_window_offset.days
-
+  # Create the Boss object
   boss = Boss.new(
     id: boss_data[:id],
     name: boss_data[:name],
     local: boss_data[:local],
     start_window: start_window,
-    end_window: end_window
+    end_window: end_window,
+    window: window
   )
 
   # Attach image to boss if image_path is present
@@ -306,7 +325,8 @@ bosses_data.each do |boss_data|
     boss.image.attach(io: File.open(Rails.root.join('app', 'assets', 'images', boss_data[:image_path])), filename: boss_data[:image_path])
   end
 
-  boss.save
+  # Save the Boss object
+  boss.save!
 end
 
 puts 'Bosses seeded successfully.'

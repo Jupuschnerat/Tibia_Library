@@ -1,0 +1,16 @@
+/* Add this to your CSS file */
+.header {
+  text-align: center;
+}
+.boss-info {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: large;
+}
+
+.boss-image {
+  width: 46px; /* Adjust the width as needed */
+  height: auto; /* This will maintain the aspect ratio */
+  margin-right: 0px; /* Add spacing between the image and name */
+}
