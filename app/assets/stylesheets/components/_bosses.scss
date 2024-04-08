@@ -9,8 +9,47 @@
   font-size: large;
 }
 
-.boss-image {
+.boss-image-container {
   width: 46px; /* Adjust the width as needed */
   height: auto; /* This will maintain the aspect ratio */
   margin-right: 0px; /* Add spacing between the image and name */
+  flex: 0 0 auto; /* This prevents the image from growing or shrinking */
+  margin-right: 20px; /* Adjust margin as needed */
+
+}
+
+.boss-image {
+  width: 105px; /* This will make the image fill the container */
+  height: auto; /* This will maintain the aspect ratio */
+}
+.card-content {
+  display: flex;
+  justify-content: space-between; /* This will evenly space the image and text */
+  color: lightish; /* Use the lightish color */
+  font-family: Martel, sans-serif; /* Use the Martel font */
+}
+
+
+.text-content {
+  flex: 1; /* This makes the text content fill the remaining space */
+  text-align: right; /* Align text to the right */
+  font-family: Martel, sans-serif; /* Use the Martel font */
+  color: #B9A7C8; /* Use the lightish color */
+  text-decoration: #B9A7C8; /* Use the lightish color */
+  line-height: 0.8; /* Adjust line height as needed */
+}
+.card-title {
+  font-family: Martel, sans-serif; /* Use the Yomogi font */
+  font-size: 1.5em; /* Adjust font size as needed */
+  margin-bottom: 10px; /* Remove margin */
+}
+
+.card {
+  background-color: #444444; /* Use the darkish-blue color */
+  color: lightish; /* Use the lightish color */
+  border: none; /* Remove border */
+  margin-bottom: 20px; /* Add margin as needed */
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8); /* Add box shadow */
+  z-index: 1; /* Ensure the card stays above the pseudo-element */
+  position: relative; /* Position the card relative to the pseudo-element */
 }
