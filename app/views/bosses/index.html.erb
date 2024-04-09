@@ -1,8 +1,8 @@
 <body class="background-eighty-opacity">
-  <div class="header col-sm">
-    <h1>BOSSES NEMESIS</h1>
-  </div>
-
+  <div class="header-container">
+    <div class="header mb-4">
+      <h1>BOSSES NEMESIS</h1>
+    </div>
   <div class="container">
     <div class="row">
       <% @bosses.sort_by(&:name).each do |boss| %>
@@ -26,5 +26,6 @@
         </div>
       <% end %>
     </div>
+  </div>
   </div>
 </body>

@@ -226,7 +226,7 @@ bosses_data = [
   { id: 5, name: 'Captain Jones', janela: '6 to 10', local: 'Ghost Ship', image_path: 'Captain_Jones.gif' },
   { id: 6, name: 'Countess Sorrow', janela: '14 to 21', local: 'PoI Bazir', image_path: 'Countess_Sorrow.gif' },
   { id: 7, name: 'Cublarc The Plunderer', janela: '6 to 9', local: 'Zao Steppe', image_path: 'Cublarc_the_Plunderer.gif' },
-  { id: 8, name: 'Dharalion', janela: '6 to 8', local: 'Venore', image_path: 'Dharalion.gif' },
+  { id: 8, name: 'Dharalion', janela: '6 to 8', local: 'Shadowthorn', image_path: 'Dharalion.gif' },
   { id: 9, name: 'Diblis The Fair', janela: '10 to 16', local: 'Edron', image_path: 'Arachir_the_Ancient_One.gif' },
   { id: 10, name: 'Dracola', janela: '14 to 21', local: 'PoI Ashfalor', image_path: 'Dracola.gif' },
   { id: 11, name: 'Dreadmaw', janela: '1 to 17', local: 'Muggy Plains (Zao)', image_path: 'Dreadmaw.gif' },
@@ -382,16 +382,13 @@ EventBoss.destroy_all
 
 # Define your event bosses data
 event_bosses_data = [
-  { id: 1, name: 'Arthom The Hunter & Oodok Witchmaster', local: 'Jungle Camp MWC', description: 'Treat them as Rare Spawns, as they can appear randomly more than once within the same day.', image_paths: ['Arthom_the_Hunter.gif', 'Oodok_Witchmaster.gif'] },
-  { id: 2, name: 'Furyosa', local: 'Fury Gates MWC', description: 'Find the currently active Fury Gate, and treat it as a Rare Spawn, checking it often', image_path: 'Furyosa.gif' },
-  { id: 3, name: 'The Hungerer, The Manhunter & The Mean Masher', local: 'Hive Outpost MWC', description: 'Treat them as Farmable Spawns.', image_paths: ['The_Hungerer.gif', 'The_Manhunter.gif', 'The_Mean_Masher.gif'] },
-  { id: 4, name: 'Devovorga, Anmothra, Irahsae, Teneshpar, Chikhaton & Phrodomo', local: "The Rise of Devovorga Event (once a year), or Devovorga's Essence MWC", description: 'During the Event, the five minions will be available but each one with certain level range limitations. During the MWC, all of them are available, but you will have to defeat them alone. Devovorga herself is available during the Event and you should treat her as Raid Boss.', image_paths: ['Devovorga.gif', 'Anmothra.gif', 'Irahsae.gif', 'Teneshpar.gif', 'Chikhaton.gif', 'Phrodomo.gif'] },
-  { id: 5, name: 'Bane Lord', local: 'Bewitched Event (once a year)', description: 'Treat it as a Raid Boss. It will randomly appear during raids every 8 hours.', image_path: 'Bane_Lord.gif' },
-  { id: 6, name: 'Feroxa', local: 'Grimvale Event (once a month)', description: 'Treat her as a Raid Boss. Her raid happens in Grimvale every 13th of the month.', image_path: 'Feroxa_(Mortal).gif' },
-  { id: 7, name: 'King Chuck', local: 'Orcsoberfest Event (twice a year)', description: 'Treat him as a Quest Boss. Kill him once every hour, up to 3 times in a 20 hour window.', image_path: 'King_Chuck.gif' },
-  { id: 8, name: 'The First Dragon', local: 'The First Dragon Event (once a year)', description: 'Treat it as a Quest Boss.', image_path: 'The_First_Dragon.gif' },
-  { id: 9, name: 'The Mutated Pumpkin', local: 'Halloween Event (once a year)', description: 'Treat it as a Raid Boss. Its raid happens every 4 hours between Oct 31 and Nov 3.', image_path: 'The_Mutated_Pumpkin.gif' },
-  { id: 10, name: 'The Percht Queen', local: 'Winterlight Solstice Event (twice a year)', description: 'Treat her as a Quest Boss. Kill her once every 20 hours', image_path: 'The_Percht_Queen.gif' },
+  { id: 1, name: 'Devovorga, Anmothra, Irahsae, Teneshpar, Chikhaton & Phrodomo', local: "The Rise of Devovorga Event (once a year), or Devovorga's Essence MWC", description: 'During the Event, the five minions will be available but each one with certain level range limitations. During the MWC, all of them are available, but you will have to defeat them alone. Devovorga herself is available during the Event and you should treat her as Raid Boss.', image_paths: ['Devovorga.gif', 'Anmothra.gif', 'Irahsae.gif', 'Teneshpar.gif', 'Chikhaton.gif', 'Phrodomo.gif'] },
+  { id: 2, name: 'Bane Lord', local: 'Bewitched Event (once a year)', description: 'Treat it as a Raid Boss. It will randomly appear during raids every 8 hours.', image_path: 'Bane_Lord.gif' },
+  { id: 3, name: 'Feroxa', local: 'Grimvale Event (once a month)', description: 'Treat her as a Raid Boss. Her raid happens in Grimvale every 13th of the month.', image_path: 'Feroxa_(Mortal).gif' },
+  { id: 4, name: 'King Chuck', local: 'Orcsoberfest Event (twice a year)', description: 'Treat him as a Quest Boss. Kill him once every hour, up to 3 times in a 20 hour window.', image_path: 'King_Chuck.gif' },
+  { id: 5, name: 'The First Dragon', local: 'The First Dragon Event (once a year)', description: 'Treat it as a Quest Boss.', image_path: 'The_First_Dragon.gif' },
+  { id: 6, name: 'The Mutated Pumpkin', local: 'Halloween Event (once a year)', description: 'Treat it as a Raid Boss. Its raid happens every 4 hours between Oct 31 and Nov 3.', image_path: 'The_Mutated_Pumpkin.gif' },
+  { id: 7, name: 'The Percht Queen', local: 'Winterlight Solstice Event (twice a year)', description: 'Treat her as a Quest Boss. Kill her once every 20 hours', image_path: 'The_Percht_Queen.gif' },
 ]
 
 # Create event bosses

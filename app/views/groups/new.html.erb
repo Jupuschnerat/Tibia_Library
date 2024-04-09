@@ -1,5 +1,3 @@
-<!-- app/views/groups/new.html.erb -->
-
 <h1>New Group</h1>
 
 <%= form_with(model: [@server, @group], local: true) do |form| %>
@@ -18,6 +16,16 @@
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :server_id, "Select Server" %>
+    <%= form.collection_select :server_id, Server.all, :id, :name, prompt: "Select a server" %>
   </div>
 
   <div class="actions">

@@ -1,7 +1,14 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!, only: [:show, :update, :become_owner]
+  before_action :set_user, only: [:show, :update]
 
   def new
     @user = User.new
+  end
+
+  def show
+    @id = current_user.id
+    @user = User.find(@id)
   end
 
   def become_owner

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_07_141405) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_09_103335) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -70,17 +70,22 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_07_141405) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "groupbosses", force: :cascade do |t|
+  create_table "group_bosses", force: :cascade do |t|
+    t.bigint "group_id"
+    t.bigint "boss_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["boss_id"], name: "index_group_bosses_on_boss_id"
+    t.index ["group_id"], name: "index_group_bosses_on_group_id"
   end
 
   create_table "groups", force: :cascade do |t|
     t.bigint "owner_id", null: false
     t.string "name"
-    t.string "server"
+    t.string "server_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "description"
     t.index ["owner_id"], name: "index_groups_on_owner_id"
   end
 
@@ -169,6 +174,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_07_141405) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bosses", "users", column: "checked_by_id"
   add_foreign_key "bosses", "users", column: "found_by_id"
+  add_foreign_key "group_bosses", "bosses"
+  add_foreign_key "group_bosses", "groups"
   add_foreign_key "groups", "users", column: "owner_id"
   add_foreign_key "groups_users", "groups"
   add_foreign_key "groups_users", "users"

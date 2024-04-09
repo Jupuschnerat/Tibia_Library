@@ -10,4 +10,6 @@ class Group < ApplicationRecord
   belongs_to :server
   has_many :server_groups
   has_many :servers, through: :server_groups
+  validates :name, presence: true
+  validates :server, presence: true
 end

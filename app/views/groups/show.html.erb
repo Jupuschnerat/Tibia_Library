@@ -1,15 +1,62 @@
-<h1>Bosses Nemesis</h1>
+<body class="background-eighty-opacity">
+  <div class="header-container">
+    <div class="header mb-4">
+      <h1><%= @group.name %></h1>
+    </div>
+      <div class="bosses">
+        <h2><%= @group.description %></h2>
+        <div class="container">
+          <div class="row">
+            <% @bosses.sort_by(&:name).each do |boss| %>
+              <div class="col-sm-4 mb-4">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="card-content">
+                      <% if boss.image.attached? %>
+                        <div class="boss-image-container">
+                          <%= image_tag boss.image, class: "boss-image" %>
+                        </div>
+                      <% end %>
+                      <h5 class="card-title"><%= boss.name %></h5>
+                    </div>
+                    <div class="button">
+                      <div class="check">
+                        <%= boss_check_button(boss) %>
+                      </div>
+                      <div class="found">
+                        <%= boss_found_button(boss) %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
 
-<table>
-  <tbody>
-    <% @bosses.each do |boss| %>
-      <tr>
-        <td><%= boss.name %></td>
-        <td>
-          <%= boss_check_link(boss) %>
-          <%= boss_found_link(boss) %>
-        </td>
-      </tr>
+    <% if @found_bosses.any? %>
+      <div class="found-bosses">
+        <h2>Found Bosses</h2>
+        <div class="container">
+          <div class="row">
+            <% @found_bosses.each do |boss| %>
+              <div class="col-md-4 mb-4">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title"><%= boss.name %></h5>
+                    <p class="card-text">
+                      Actions:
+                      <%= boss_check_button(boss) %>
+                      <%= boss_found_button(boss) %>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
+  </div>
+</body>

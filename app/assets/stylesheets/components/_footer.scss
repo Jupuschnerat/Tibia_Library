@@ -1,18 +1,29 @@
 .footer {
-  position: fixed;
-  bottom: 0;
   width: 100%;
-  height: 70px; /* Adjust the height of your footer as needed */
-  background-color: #ffffff; /* Adjust background color as needed */
-  color: purple; /* Adjust text color as needed */
-  padding: 20px 0; /* Adjust padding as needed */
-  z-index: 1000; /* Ensure the footer appears above other content */
+  background-color: #ffffff;
+  color: purple;
+  padding: 20px 0;
+  clear: both; /* Add this to clear any floated elements */
 }
 
-// .card {
-//   padding-bottom: 70px; /* Adjust the padding-bottom to accommodate the footer height */
-// }
+.footer-content {
+  position: relative;
+  z-index: 1001;
+}
 
 .footer a {
-  color: purple; /* Adjust link color as needed */
+  font-family: Martel, sans-serif;
+  color: purple;
+  text-decoration: none;
+  font-size: 1.5em;
+}
+
+.footer h2, .footer h5, .footer p {
+  font-family: Martel, sans-serif;
+  color: purple;
+}
+
+body {
+  position: relative; /* Add this to position the footer correctly */
+  margin-bottom: 0px; /* Adjust margin to accommodate footer height */
 }

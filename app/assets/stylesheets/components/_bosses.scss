@@ -29,7 +29,34 @@
   font-family: Martel, sans-serif; /* Use the Martel font */
 }
 
+/* Add this to your CSS file */
+.header {
+  display: flex;
+  flex-direction: column; /* Arrange items in a column */
+  justify-content: center; /* Align items to the center vertically */
+  align-items: center; /* Align items to the center horizontally */
+  height: 70px; /* Make the container full height of the viewport */
+  width: 380px; /* Set container width to match content width */
+  margin: 0 auto; /* Center the container horizontally */
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8);
+}
 
+.header {
+  text-align: center;
+  font-family: Martel, sans-serif;
+  font-weight: boldest;
+  font-size: 1.2em; /* Adjust font size as needed */
+  line-height: 1.2;
+  background-color: #480D3F; /* Use the provided darkish-blue color */
+  color: #B9A7C8; /* Use the provided lightish color */
+  padding: 5px 10px; /* Adjust padding to make the square smaller */
+  margin-top: 20px; /* Adjust margin to separate from navbar */
+}
+
+.content {
+  margin-top: 20px; /* Adjust margin to separate from header */
+  /* Other styles for your card content */
+}
 .text-content {
   flex: 1; /* This makes the text content fill the remaining space */
   text-align: right; /* Align text to the right */

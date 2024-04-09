@@ -20,20 +20,17 @@ Rails.application.routes.draw do
   resources :guides
 
   resources :groups do
-    resources :memberships, only: [:create, :update, :destroy]
+    resources :memberships, only: [:index, :create, :update, :destroy]
     resources :users, only: [:index, :create, :destroy] # Assuming you want CRUD operations for users within groups
   end
 
   resources :users, only: [:show, :edit, :update, :destroy] # For individual user management
 
-
-
-  resources :servers, only: [:index, :show] do
+  resources :servers do
     resources :groups do
-      resources :membership_requests, only: :create
+      resources :membership_requests, only: [:index, :create, :update, :destroy]
     end
   end
-
 
   resources :event_bosses, only: [:index] do
     resources :groups
@@ -55,4 +52,6 @@ Rails.application.routes.draw do
     end
   end
 
+  # Define a separate route for creating a new group without specifying a server
+  get '/groups/new', to: 'groups#new', as: 'new_group_without_server'
 end
