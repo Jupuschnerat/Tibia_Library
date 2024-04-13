@@ -1,53 +1,53 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-library">
-  <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag("tibialibrary.png") %>
-    <% end %>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
-          <li class="nav-item">
-            <%= link_to "BOSSES", bosses_path %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "STAFF", new_group_without_server_path %>
-          </li>
-          <li class="nav-item">
-            <% if @server_id %>
-              <%= link_to "NEW GROUP", new_group_without_server_path %>
-            <% else %>
-              <% render 'groups/new_group_form' %>
-            <% end %>
-          </li>
-          <% if @server_id %>
-            <li class="nav-item">
-              <%= link_to "MY GROUPS", server_groups_path(@server_id) %>
-            </li>
+<body class="background-eighty-opacity">
+  <div class="wrapper">
+    <div class="header-container">
+      <div class="navbar navbar-expand-sm navbar-light navbar-library">
+        <div class="container-fluid">
+          <%= link_to "#", class: "navbar-brand" do %>
+            <%= image_tag("tibialibrary.png") %>
           <% end %>
-          <li class="nav-item-divider"></li>
-          <li class="nav-item">
-            <% if @id.present? %>
-              <%= link_to "MY PROFILE", user_path(@id), class: "box" %>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto">
+              <% if user_signed_in? %>
+                <li class="nav-item">
+                  <%= link_to "BOSSES", bosses_path %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to "STAFF", "#" %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to "NEW GROUP", new_group_path %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to "MY GROUPS", groups_path %>
+                </li>
+
+                <li class="nav-item-divider"></li>
+
+                <% if @id.present? %>
+                  <li class="my-profile">
+                    <%= link_to "MY PROFILE", user_path(@id), class: "box" %>
+                  </li>
+                <% end %>
+
+              <% else %>
+                <li class="nav-item">
+                  <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+                </li>
+              <% end %>
+            </ul>
+            <% if user_signed_in? %>
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <%= link_to "SIGN OUT", destroy_user_session_path, data: {turbo_method: :delete}, class: "nav-link signout" %>
+                </li>
+              </ul>
             <% end %>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
-        <% end %>
-      </ul>
-      <% if user_signed_in? %>
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <%= link_to "SIGN OUT", destroy_user_session_path, data: {turbo_method: :delete}, class: "nav-link signout" %>
-          </li>
-        </ul>
-      <% end %>
     </div>
   </div>
 </div>

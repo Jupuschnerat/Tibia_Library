@@ -1,0 +1,101 @@
+.group {
+  margin-top: 20px;
+}
+
+.button {
+  // Existing styles
+  // Position buttons to bottom right
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-radius: 10px;
+  padding-top: 50px;
+}
+
+.check, .found {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  border-radius: 20px; /* Rounded corners */
+  color: #B9A7C8;
+  background-color: #480D3F;
+  border: none;
+  text-align: center;
+  height: 20px;
+  width: 70px;
+  font-family: 'Martel', sans-serif;
+  font-size: 1em;
+  line-height: 0.8;
+
+}
+.check-and-found {
+  display: flex;
+}
+
+.check-and-found .check,
+.check-and-found .found {
+  margin-right: 10px; /* Adjust margin as needed */
+  margin-bottom: 10px; /* Adjust margin as needed */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.check-and-found .check:hover,
+.check-and-found .found:hover {
+  background-color: #3B0133; /* Change background color on hover */
+  color: #B9A7C8; /* Change text color on hover */
+  cursor: pointer; /* Change cursor on hover */
+}
+
+.description-card {
+  background-color: rgba(68, 68, 68, 0.1); /* Add transparency to the background color */
+  color: #B9A7C8 !important; /* Use the lightish color */
+  border: none;
+  margin-bottom: 20px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8);
+  z-index: 1;
+  position: relative;
+}
+
+.group,
+.group h1,
+.group h2,
+.group p {
+  color: #B9A7C8 !important;
+}
+
+.header-group {
+  text-align: center;
+  display: flex;
+  flex-direction: column; /* Arrange items in a column */
+  justify-content: center; /* Align items to the center vertically */
+  align-items: center; /* Align items to the center horizontally */
+  height: 70px; /* Make the container full height of the viewport */
+  width: 380px; /* Set container width to match content width */
+  margin: 0 auto; /* Center the container horizontally */
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8);
+  text-align: center;
+  font-family: 'Martel', sans-serif !important;
+  font-weight: bold;
+  font-size: 1.2em;
+  line-height: 1.2;
+  background-color: rgba(72, 13, 63, 0.8);
+  color: #B9A7C8;
+  padding: 5px 10px;
+  margin-top: 20px;
+}
+/* Add this CSS to your stylesheet */
+.warning-sign {
+  color: red;
+  font-size: 18px;
+}
+.card-text-groups {
+  font-size: medium;
+  padding-bottom: 10px;
+}
+.card-text-sm {
+  font-size: small;
+}
+.card-text-groups {
+  font-size: medium;
+
+}

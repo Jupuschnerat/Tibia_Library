@@ -7,6 +7,7 @@ class ServersController < ApplicationController
 
   def show
     @server = Server.find(server_params)
+    @bosses = @server.all_bosses
   rescue ActiveRecord::RecordNotFound
     flash[:error] = "Server not found."
     redirect_to servers_path

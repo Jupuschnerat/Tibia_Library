@@ -3,15 +3,17 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
-  resources :bosses do
-    resources :groups
-    put 'check'
-    put 'found'
-    resources :users, only: [] do
-      put 'check', to: 'bosses#check'
-      put 'found', to: 'bosses#found'
+  resources :servers do
+    resources :groups do
+      resources :bosses, except: [:index]
+      member do
+        put 'found', to: 'groups#found'
+        put 'check', to: 'groups#check'
+      end
     end
   end
+
+  resources :bosses, only: [:index]
 
   resources :raid_bosses do
     resources :groups
@@ -19,6 +21,7 @@ Rails.application.routes.draw do
 
   resources :guides
 
+  # Define a separate route for groups that don't belong to a server
   resources :groups do
     resources :memberships, only: [:index, :create, :update, :destroy]
     resources :users, only: [:index, :create, :destroy] # Assuming you want CRUD operations for users within groups
@@ -26,6 +29,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :edit, :update, :destroy] # For individual user management
 
+    # Define routes for groups nested under servers
   resources :servers do
     resources :groups do
       resources :membership_requests, only: [:index, :create, :update, :destroy]
@@ -53,5 +57,5 @@ Rails.application.routes.draw do
   end
 
   # Define a separate route for creating a new group without specifying a server
-  get '/groups/new', to: 'groups#new', as: 'new_group_without_server'
+  # get '/groups/new', to: 'groups#new', as: 'new_group'
 end

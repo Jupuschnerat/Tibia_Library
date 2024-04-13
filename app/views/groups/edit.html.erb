@@ -1,0 +1,25 @@
+<!-- app/views/groups/edit.html.erb -->
+
+<h1>Edit Group</h1>
+
+<%= form_for @group do |f| %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Update Group", class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<%= link_to "Back", @group, class: "btn btn-secondary" %>
+
+<% if current_user == @group.owner %>
+  <%= button_to 'Delete', @group, method: :delete, form: { data: { turbo_confirm: "Are you sure?" } }, class: "btn btn-primary mt-3" %>
+<% end %>

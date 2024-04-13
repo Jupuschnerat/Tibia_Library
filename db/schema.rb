@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_09_103335) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_13_095249) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -57,6 +57,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_09_103335) do
     t.string "image_path"
     t.boolean "no_chance", default: false
     t.string "window"
+    t.datetime "found_at"
+    t.datetime "checked_at"
     t.index ["checked_by_id"], name: "index_bosses_on_checked_by_id"
     t.index ["found_by_id"], name: "index_bosses_on_found_by_id"
   end
@@ -77,6 +79,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_09_103335) do
     t.datetime "updated_at", null: false
     t.index ["boss_id"], name: "index_group_bosses_on_boss_id"
     t.index ["group_id"], name: "index_group_bosses_on_group_id"
+  end
+
+  create_table "group_users", force: :cascade do |t|
+    t.bigint "group_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_group_users_on_group_id"
+    t.index ["user_id"], name: "index_group_users_on_user_id"
   end
 
   create_table "groups", force: :cascade do |t|
@@ -176,6 +187,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_09_103335) do
   add_foreign_key "bosses", "users", column: "found_by_id"
   add_foreign_key "group_bosses", "bosses"
   add_foreign_key "group_bosses", "groups"
+  add_foreign_key "group_users", "groups"
+  add_foreign_key "group_users", "users"
   add_foreign_key "groups", "users", column: "owner_id"
   add_foreign_key "groups_users", "groups"
   add_foreign_key "groups_users", "users"
