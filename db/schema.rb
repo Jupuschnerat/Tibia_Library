@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_13_095249) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_13_195414) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -61,6 +61,17 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_13_095249) do
     t.datetime "checked_at"
     t.index ["checked_by_id"], name: "index_bosses_on_checked_by_id"
     t.index ["found_by_id"], name: "index_bosses_on_found_by_id"
+  end
+
+  create_table "bosstiaries", force: :cascade do |t|
+    t.string "name"
+    t.string "boss_class"
+    t.integer "kills_needed", default: 5
+    t.integer "bane_points", default: 50
+    t.integer "archfoe_points", default: 100
+    t.integer "nemesis_points", default: 100
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "event_bosses", force: :cascade do |t|
@@ -166,6 +177,16 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_13_095249) do
     t.index ["group_id"], name: "index_servers_on_group_id"
   end
 
+  create_table "user_boss_progress", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "bosstiaries_id"
+    t.integer "kills_achieved", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bosstiaries_id"], name: "index_user_boss_progress_on_bosstiaries_id"
+    t.index ["user_id"], name: "index_user_boss_progress_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -195,4 +216,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_13_095249) do
   add_foreign_key "no_chance_bosses", "bosses"
   add_foreign_key "owners", "users"
   add_foreign_key "servers", "groups"
+  add_foreign_key "user_boss_progress", "bosstiaries", column: "bosstiaries_id"
+  add_foreign_key "user_boss_progress", "users"
 end

@@ -56,6 +56,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :profiles, only: [:show, :edit, :update]
+  get 'bosstiary', to: 'bosstiary#index'
   # Define a separate route for creating a new group without specifying a server
   # get '/groups/new', to: 'groups#new', as: 'new_group'
 end

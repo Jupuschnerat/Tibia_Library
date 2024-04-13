@@ -1,0 +1,2 @@
+class Bosstiary < ApplicationRecord
+end

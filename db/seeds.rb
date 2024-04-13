@@ -446,3 +446,28 @@ quest_bosses_data.each do |quest_boss_data|
 end
 
 puts 'Quest Bosses seeded successfully.'
+
+bosstiary_data = [
+  { id: 1, name: 'Abyssador', boos_class: 'archfoe' },
+  { id: 2, name: 'Ahau', boss_class: 'archfoe' },
+  { id: 3, name: "Alptramun", boss_class: 'nemesis' },
+  { id: 4, name: 'Amenef the Burning', boss_class: 'archfoe' },
+  { id: 5, name: 'Ancient Spawn Of Morgathla', boss_class: 'archfoe' },
+  { id: 6, name: 'Anmothra', boss_class: 'nemesis' },
+  { id: 7, name: 'Annihilon', boss_class: 'bane'  },
+  { id: 8, name: 'Anomaly', boss_class: 'archfoe' },
+  { id: 9, name: 'Arachir the Ancient One', boss_class: 'nemesis' },
+  { id: 10, name: 'Arthei', boss_class: 'bane'  },
+  { id: 11, name: 'Arthom The Hunter', boss_class: 'nemesis' },
+  { id: 12, name: 'Ascending Ferumbras', boss_class: 'nemesis' },
+  { id: 13, name: 'Ashmunrah', boss_class: 'bane' },
+  { id: 14, name: 'Atab', boss_class: 'bane' },
+  # Add more raid bosses as needed
+]
+bosstiary_data.each do |bosstiary_data|
+  bosstiary = RaidBoss.create!(
+    id: bosstiary_data[:id],
+    name: bosstiary_data[:name],
+    boss_class: bosstiary_data[:boss_class],
+
+  )

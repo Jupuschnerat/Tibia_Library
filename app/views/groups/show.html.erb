@@ -32,46 +32,47 @@
         <div class="container">
           <div class="row">
             <% @bosses.sort_by(&:name).each do |boss| %>
-            <div class="col-4">
-              <div class="card">
-                <div class="card-body">
-                  <div class="card-content">
-                    <% if boss.image.attached? %>
-                    <div class="boss-image-container">
-                      <%= image_tag boss.image, class: "boss-image" %>
-                    </div>
-                    <% end %>
-                    <div class="text-content">
-                      <h5 class="card-title"><%= boss.name %></h5>
-                      <p class="card-text-groups">Window: <%= boss.window %></p>
-                      <p class="card-text-groups"> <%= boss.local %></p>
-                    </div>
-                  </div>
-                  <div class="button">
-                    <div class="check-and-found">
-                      <!-- Display Last checked information beside the Check button -->
-                      <div class="last-checked">
-                        <h6 class="card-text-sm">
-                          Last checked:
-                        </h6>
-                        <h6 class="card-text-sm"><%= time_since_last_check(boss) %></h6>
-                        <% if boss.checked_at.present? && boss.checked_at < 45.minutes.ago %>
-                          <span class="warning-sign">&#9888;</span> <!-- Red warning sign -->
-                        <% end %>
+              <div class="col-4">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="card-content">
+                      <% if boss.image.attached? %>
+                      <div class="boss-image-container">
+                        <%= image_tag boss.image, class: "boss-image" %>
                       </div>
-                      <div class="check">
-                        <%= boss_check_button(@server, @group, boss) %>
+                      <% end %>
+                      <div class="text-content">
+                        <h5 class="card-title"><%= boss.name %></h5>
+                        <p class="card-text-groups">Window: <%= boss.window %></p>
+                        <p class="card-text-groups"> <%= boss.local %></p>
                       </div>
-                      <div class="found">
-                        <%= boss_found_button(@server, @group, boss) %>
+                    </div>
+                    <div class="button">
+                      <div class="check-and-found">
+                        <!-- Display Last checked information beside the Check button -->
+                        <div class="last-checked">
+                          <h6 class="card-text-sm">
+                            Last checked:
+                          </h6>
+                          <h6 class="card-text-sm"><%= time_since_last_check(boss) %></h6>
+                          <% if boss.checked_at.present? && boss.checked_at < 45.minutes.ago %>
+                            <span class="warning-sign">&#9888;</span> <!-- Red warning sign -->
+                          <% end %>
+                        </div>
+                        <div class="check">
+                          <%= boss_check_button(@server, @group, boss) %>
+                        </div>
+                        <div class="found">
+                          <%= boss_found_button(@server, @group, boss) %>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
+              <% end %>
             </div>
-            <% end %>
-          </div>
-      </div>
+        </div>
+    </div>
   </div>
 </body>
